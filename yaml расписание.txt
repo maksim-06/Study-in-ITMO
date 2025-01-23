@@ -1,0 +1,54 @@
+root: 
+    weeks: чёт
+    day: Среда
+    pair: 
+        first: 
+            start: 8:20
+            end: 9:50
+            group: P3106
+            audience: 1216
+            adress: ул.Ломоносова, д.9, лит.М
+            name: Информатика
+            type: Лекция
+            teacher: Балакшин Павел Валерьевич
+            format: Очно
+        second: 
+            start: 10:00
+            end: 11:30
+            group: P3106
+            audience: 1216
+            adress: ул.Ломоносова, д.9, лит.М
+            name: Основы профессиональной деятельности
+            type: Лекция
+            teacher: Клименков Сергей Викторович
+            format: Очно
+    day: Суббота
+    pair: 
+        first: 
+            start: 10:00
+            end: 11:30
+            group: P3106
+            name: Математический анализ
+            type: Лекция
+            teacher: Блейхер Оксана Владимировна
+            format: Дистанционно
+        second: 
+            start: 13:30
+            end: 15:00
+            group: P3106
+            audience: 1415
+            adress: Кронверкский пр., д.49, лит.А
+            name: Информатика
+            type: Лабораторная
+            teacher: Балакшин Павел Валерьевич
+            format: Очно
+        third: 
+            start: 17:00
+            end: 18:30
+            group: P3106
+            audience: 2416
+            adress: Кронверкский пр., д.49, лит.А
+            name: История Российской науки и техники
+            type: Лекция
+            teacher: Васильев Андрей Владимирович
+            format: Очно

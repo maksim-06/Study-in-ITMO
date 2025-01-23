@@ -1,0 +1,62 @@
+<root>
+    <weeks>чёт</weeks>
+    <day>Среда</day>
+    <pair>
+        <first>
+            <start>8:20</start>
+            <end>9:50</end>
+            <group>P3106</group>
+            <audience>1216</audience>
+            <adress>ул.Ломоносова, д.9, лит.М</adress>
+            <name>Информатика</name>
+            <type>Лекция</type>
+            <teacher>Балакшин Павел Валерьевич</teacher>
+            <format>Очно</format>
+        </first>
+        <second>
+            <start>10:00</start>
+            <end>11:30</end>
+            <group>P3106</group>
+            <audience>1216</audience>
+            <adress>ул.Ломоносова, д.9, лит.М</adress>
+            <name>Основы профессиональной деятельности</name>
+            <type>Лекция</type>
+            <teacher>Клименков Сергей Викторович</teacher>
+            <format>Очно</format>
+        </second>
+    </pair>
+    <day>Суббота</day>
+    <pair>
+        <first>
+            <start>10:00</start>
+            <end>11:30</end>
+            <group>P3106</group>
+            <name>Математический анализ</name>
+            <type>Лекция</type>
+            <teacher>Блейхер Оксана Владимировна</teacher>
+            <format>Дистанционно</format>
+        </first>
+        <second>
+            <start>13:30</start>
+            <end>15:00</end>
+            <group>P3106</group>
+            <audience>1415</audience>
+            <adress>Кронверкский пр., д.49, лит.А</adress>
+            <name>Информатика</name>
+            <type>Лабораторная</type>
+            <teacher>Балакшин Павел Валерьевич</teacher>
+            <format>Очно</format>
+        </second>
+        <third>
+            <start>17:00</start>
+            <end>18:30</end>
+            <group>P3106</group>
+            <audience>2416</audience>
+            <adress>Кронверкский пр., д.49, лит.А</adress>
+            <name>История Российской науки и техники</name>
+            <type>Лекция</type>
+            <teacher>Васильев Андрей Владимирович</teacher>
+            <format>Очно</format>
+        </third>
+    </pair>
+</root>

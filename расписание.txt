@@ -1,0 +1,62 @@
+<wml>
+  <card>
+     <p>nedeli: </p>
+       <p>weeks: </p>
+         <p>week: 2</p>
+         <p>week: 4</p>
+         <p>week: 6</p>
+         <p>week: 8</p>
+     <p>pair1: </p>
+       <p>day: Среда</p>
+       <p>first: </p>
+         <p>start: 8:20</p>
+         <p>end: 9:50</p>
+         <p>group: P3106</p>
+         <p>audience: 1216</p>
+         <p>adress: ул. Ломоносова д. 9 лит. М</p>
+         <p>name: Информатика</p>
+         <p>type: Лекция</p>
+         <p>teacher: Балакшин Павел Валерьевич</p>
+         <p>format: Очно</p>
+       <p>second: </p>
+         <p>start: 10:00</p>
+         <p>end: 11:30</p>
+         <p>group: P3106</p>
+         <p>audience: 1216</p>
+         <p>adress: ул. Ломоносова д. 9 лит. М</p>
+         <p>name: Основы профессиональной деятельности</p>
+         <p>type: Лекция</p>
+         <p>teacher: Клименков Сергей Викторович</p>
+         <p>format: Очно</p>
+     <p>pair2: </p>
+       <p>day: Суббота</p>
+       <p>first: </p>
+         <p>start: 10:00</p>
+         <p>end: 11:30</p>
+         <p>group: P3106</p>
+         <p>name: Математический анализ</p>
+         <p>type: Лекция</p>
+         <p>teacher: Блейхер Оксана Владимировна</p>
+         <p>format: Дистанционно</p>
+       <p>second: </p>
+         <p>start: 13:30</p>
+         <p>end: 15:00</p>
+         <p>group: P3106</p>
+         <p>audience: 1415</p>
+         <p>adress: Кронверкский пр. д. 49 лит. А</p>
+         <p>name: Информатика</p>
+         <p>type: Лабораторная</p>
+         <p>teacher: Балакшин Павел Валерьевич</p>
+         <p>format: Очно</p>
+       <p>third: </p>
+         <p>start: 17:00</p>
+         <p>end: 18:30</p>
+         <p>group: P3106</p>
+         <p>audience: 2416</p>
+         <p>adress: Кронверкский пр. д. 49 лит. А</p>
+         <p>name: История Российской науки и техники</p>
+         <p>type: Лекция</p>
+         <p>teacher: Васильев Андрей Владимирович</p>
+         <p>format: Очно</p>
+  </card>
+</wml>
