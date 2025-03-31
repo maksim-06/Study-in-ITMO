@@ -1,0 +1,12 @@
+add
+ScriptProduct
+99
+99
+100
+SQUARE_METERS
+new
+15
+PRIVATE_LIMITED_COMPANY
+Пушкина
+show
+save
