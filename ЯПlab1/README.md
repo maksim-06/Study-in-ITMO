@@ -12,7 +12,7 @@
 
 ```bash
 # Клонируйте репозиторий
-git clone <ваш-url-репозитория>
+git clone https://github.com/maksim-06/Study-in-ITMO.git
 cd lab1
 
 # Создайте папку для сборки
