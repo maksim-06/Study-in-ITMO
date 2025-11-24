@@ -1,6 +1,0 @@
-C:\Users\nekru\RiderProjects\lab_3_final\lab_3_final\bin\Debug\lab_3_final.exe
-C:\Users\nekru\RiderProjects\lab_3_final\lab_3_final\bin\Debug\lab_3_final.pdb
-C:\Users\nekru\RiderProjects\lab_3_final\lab_3_final\obj\Debug\lab_3_final.csproj.AssemblyReference.cache
-C:\Users\nekru\RiderProjects\lab_3_final\lab_3_final\obj\Debug\lab_3_final.csproj.CoreCompileInputs.cache
-C:\Users\nekru\RiderProjects\lab_3_final\lab_3_final\obj\Debug\lab_3_final.exe
-C:\Users\nekru\RiderProjects\lab_3_final\lab_3_final\obj\Debug\lab_3_final.pdb
