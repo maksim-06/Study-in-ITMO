@@ -12,7 +12,6 @@ namespace lab_3_final
             if (args.Length < 2)
             {
                 Console.WriteLine("Usage: HttpFileServer <port> <directory> [workerCount]");
-                Console.WriteLine("Example: HttpFileServer 8080 C:\\MyFiles 10");
                 Console.WriteLine("Default worker count: 5");
                 return;
             }
@@ -83,4 +82,5 @@ namespace lab_3_final
             Console.WriteLine();
         }
     }
+
 }
