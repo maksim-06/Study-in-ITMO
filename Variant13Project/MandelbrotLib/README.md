@@ -17,4 +17,5 @@
 Сборка и запуск
 Скачайте ZIP: Нажмите Code → Download ZIP
 Распакуйте архив
-откройте проект в Rider или Visual Studio и запустите
+перейлите в Study-in-ITMO--\Variant13Project\MandelbrotLib
+запустите командой python variant13_animation.py
