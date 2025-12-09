@@ -1,0 +1,11 @@
+C:\Users\nekru\Variant13Project\MandelbrotLib\bin\Release\net8.0\MandelbrotLib.deps.json
+C:\Users\nekru\Variant13Project\MandelbrotLib\bin\Release\net8.0\MandelbrotLib.dll
+C:\Users\nekru\Variant13Project\MandelbrotLib\bin\Release\net8.0\MandelbrotLib.pdb
+C:\Users\nekru\Variant13Project\MandelbrotLib\obj\Release\net8.0\MandelbrotLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nekru\Variant13Project\MandelbrotLib\obj\Release\net8.0\MandelbrotLib.AssemblyInfoInputs.cache
+C:\Users\nekru\Variant13Project\MandelbrotLib\obj\Release\net8.0\MandelbrotLib.AssemblyInfo.cs
+C:\Users\nekru\Variant13Project\MandelbrotLib\obj\Release\net8.0\MandelbrotLib.csproj.CoreCompileInputs.cache
+C:\Users\nekru\Variant13Project\MandelbrotLib\obj\Release\net8.0\MandelbrotLib.dll
+C:\Users\nekru\Variant13Project\MandelbrotLib\obj\Release\net8.0\refint\MandelbrotLib.dll
+C:\Users\nekru\Variant13Project\MandelbrotLib\obj\Release\net8.0\MandelbrotLib.pdb
+C:\Users\nekru\Variant13Project\MandelbrotLib\obj\Release\net8.0\ref\MandelbrotLib.dll
