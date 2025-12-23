@@ -34,4 +34,8 @@ exit — выйти из программы
 
 
 Сборка и запуск:
-Скачайте ZIP: Нажмите Code → Download ZIP Распакуйте архив перейлите в Study-in-ITMO--/ExpressionEvaluator/ExpressionEvaluator
+Скачайте ZIP: Нажмите Code → Download ZIP 
+Распакуйте архив 
+перейлите в Study-in-ITMO--/ExpressionEvaluator/ExpressionEvaluator
+запустите с помощью команды dotnet run
+
