@@ -1,0 +1,14 @@
+C:\Users\nekru\RiderProjects\ExpressionEvaluator\ExpressionEvaluator\bin\Debug\net8.0\ExpressionEvaluator.exe
+C:\Users\nekru\RiderProjects\ExpressionEvaluator\ExpressionEvaluator\bin\Debug\net8.0\ExpressionEvaluator.deps.json
+C:\Users\nekru\RiderProjects\ExpressionEvaluator\ExpressionEvaluator\bin\Debug\net8.0\ExpressionEvaluator.runtimeconfig.json
+C:\Users\nekru\RiderProjects\ExpressionEvaluator\ExpressionEvaluator\bin\Debug\net8.0\ExpressionEvaluator.dll
+C:\Users\nekru\RiderProjects\ExpressionEvaluator\ExpressionEvaluator\bin\Debug\net8.0\ExpressionEvaluator.pdb
+C:\Users\nekru\RiderProjects\ExpressionEvaluator\ExpressionEvaluator\obj\Debug\net8.0\ExpressionEvaluator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nekru\RiderProjects\ExpressionEvaluator\ExpressionEvaluator\obj\Debug\net8.0\ExpressionEvaluator.AssemblyInfoInputs.cache
+C:\Users\nekru\RiderProjects\ExpressionEvaluator\ExpressionEvaluator\obj\Debug\net8.0\ExpressionEvaluator.AssemblyInfo.cs
+C:\Users\nekru\RiderProjects\ExpressionEvaluator\ExpressionEvaluator\obj\Debug\net8.0\ExpressionEvaluator.csproj.CoreCompileInputs.cache
+C:\Users\nekru\RiderProjects\ExpressionEvaluator\ExpressionEvaluator\obj\Debug\net8.0\ExpressionEvaluator.dll
+C:\Users\nekru\RiderProjects\ExpressionEvaluator\ExpressionEvaluator\obj\Debug\net8.0\refint\ExpressionEvaluator.dll
+C:\Users\nekru\RiderProjects\ExpressionEvaluator\ExpressionEvaluator\obj\Debug\net8.0\ExpressionEvaluator.pdb
+C:\Users\nekru\RiderProjects\ExpressionEvaluator\ExpressionEvaluator\obj\Debug\net8.0\ExpressionEvaluator.genruntimeconfig.cache
+C:\Users\nekru\RiderProjects\ExpressionEvaluator\ExpressionEvaluator\obj\Debug\net8.0\ref\ExpressionEvaluator.dll
