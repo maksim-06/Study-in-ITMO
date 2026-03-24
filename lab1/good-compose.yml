@@ -1,0 +1,37 @@
+services:
+  web1:
+    #1: Явное указание контекста и файла сборки
+    build:
+      context: .
+      dockerfile: good.Dockerfile
+    ports:
+      - "7813:5000"
+    #2: Политика перезапуска
+    restart: unless-stopped
+
+    #3: Сетевая изоляция
+    networks:
+      - network_a
+
+    #4: Переменные окружения
+    environment:
+      - SERVICE_NAME=web1
+
+  web2:
+    build:
+      context: .
+      dockerfile: good.Dockerfile
+    ports:
+      - "7814:5000"
+    restart: unless-stopped
+    # Сетевая изоляция: web2 в другой сети (network_b)
+    networks:
+      - network_b
+    environment:
+      - SERVICE_NAME=web2
+
+# Явное объявление сетей
+# Создает две изолированные сети внутри одного проекта
+networks:
+  network_a:
+  network_b:
