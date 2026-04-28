@@ -1,0 +1,94 @@
+Задание:
+Сравнение беззнаковых чисел. С ВУ-3 вводится два беззнаковых 16-разрядных числа (в два захода, сначала старшая часть, затем младшая). На ВУ-7 (семисегментный индикатор) выводится наибольшее из двух чисел.
+
+Решение:
+ORG 0x10
+START: CLA
+S1: IN 7
+AND #0x40
+BEQ S1
+IN 6
+SWAB
+ST p1
+S2: IN 7
+AND #0x40
+BEQ S2
+LD p1
+IN 6
+ST p1
+S3: IN 7
+AND #0x40
+BEQ S3
+IN 6
+SWAB
+ST p2
+S4: IN 7
+AND #0x40
+BEQ S4
+LD p2
+IN 6
+ST p2
+
+ld p1 
+cmp p2 
+bcc pushP2
+ld p1
+st arg
+jump pushP1
+
+pushP1:
+			ld p1
+			st arg
+			jump process
+			
+
+pushP2:        ld p2 
+               st arg
+               jump process
+              
+
+
+
+
+process:        call func
+               
+
+func:       ld arg 
+			cmp TEN
+			bcc print
+			sub TEN
+			st arg
+			ld TIME
+			inc
+			st TIME
+               jump func
+
+print:    ST NUM
+            LD POS 
+            OR NUM 
+            OUT 0X14
+            LD POS        
+            ADD #0X10
+            ST POS
+            LD TIME
+            st arg
+            st TIME
+            CMP #0
+            BEQ STOP 
+            CLA 
+            ST TIME  
+            JUMP func
+
+STOP:       
+            hlt
+
+
+
+p1: WORD ?
+p2: WORD ?
+NUM:        WORD ?
+TIME:       WORD 0x000
+POS:        WORD 0x000
+TEN:        WORD 0Xa
+TEMP_X:     WORD ?
+arg:        word ?

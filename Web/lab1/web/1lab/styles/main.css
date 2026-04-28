@@ -1,0 +1,112 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: monospace;
+    font-size: 16px;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+.navbar {
+
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+}
+
+.navbar .number {
+    color: #ffd500;
+}
+
+.navbar .var {
+    color: #ae09ff;
+}
+
+#info {
+    font-size: 16px;
+}
+
+#xs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#data-form{
+    color: #ae09ff;
+}
+
+.radio-group {
+    color: aqua;
+}
+
+#y {
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+#r {
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #333;
+    color: #f0f0f0;
+    padding: 0 1rem 0 0.5rem;
+}
+
+#data-form button[type="submit"] {
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+#data-form button[type="submit"]:active {
+    background-color: #26c648;
+}
+
+.input-section {
+    padding-top: 8vh;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#data-form fieldset {
+    margin-bottom: 1%;
+}
+
+
+#result-table th, td {
+    border: 1px solid #555;
+    padding: 10px;
+    text-align: center;
+}
+
+#result-table th {
+    background-color: #333;
+    color: #e6c20d;
+}
+
+#result-table td {
+    background-color: #333;
+}
+
+
+#error {
+    color: #FF6961;
+    padding: 1%;
+}

@@ -1,0 +1,95 @@
+<div class="main">
+  <div class="header">
+    <h2>Main page</h2>
+    <button (click)="logout()" class="logout-btn">Exit</button>
+  </div>
+
+  <div class="top-section">
+    <div class="point-form">
+      <h3>Enter the coordinates of the point</h3>
+      <div class="input-group">
+        <label>Coordinates X:</label>
+        <input
+          type="text"
+          [(ngModel)]="x"
+          placeholder="A number between -3 and 3">
+      </div>
+
+      <div class="input-group">
+        <label>Coordinates Y:</label>
+        <input
+          type="text"
+          [(ngModel)]="y"
+          placeholder="A number between -3 and 5">
+      </div>
+
+      <div class="input-group">
+        <label>Radius R:</label>
+        <input
+          type="text"
+          [(ngModel)]="r"
+          (ngModelChange)="onRChange()"
+          placeholder="A number between 0 and 3">
+      </div>
+
+      <button (click)="checkPoint()" class="check-btn">Check</button>
+
+      @if (errormessage) {
+        <div class="error">{{ errormessage }}</div>
+      }
+    </div>
+
+    <div class="graph">
+      <svg id="graph" width="300" height="300" style="background: black"
+           (click)="onGraphClick($event)">
+
+        <rect x="50" y="100" width="100" height="50" style="fill: rgba(51,153,255,0.2)"/>
+        <polygon points="150,150 200,150 150,50" fill="rgba(51,153,255,0.2)"/>
+        <path d="M200,150 A50,50 0 0,1 150,200 L150,150 L200,150 Z" fill="rgba(51,153,255,0.2)"/>
+
+        <line x1="150" y1="0" x2="150" y2="300" stroke="white" stroke-width="1"/>
+        <line x1="0" y1="150" x2="300" y2="150" stroke="white" stroke-width="1"/>
+
+        <text x="156" y="144" fill="white" font-family="monospace" font-size="12">0</text>
+
+        <text x="194" y="144" fill="white" font-family="monospace" font-size="12">R/2</text>
+        <text x="244" y="144" fill="white" font-family="monospace" font-size="12">R</text>
+
+        <text x="106" y="144" fill="white" font-family="monospace" font-size="12">-R/2</text>
+        <text x="42" y="144" fill="white" font-family="monospace" font-size="12">-R</text>
+
+        <text x="156" y="106" fill="white" font-family="monospace" font-size="12">R/2</text>
+        <text x="156" y="56" fill="white" font-family="monospace" font-size="12">R</text>
+
+        <text x="156" y="194" fill="white" font-family="monospace" font-size="12">-R/2</text>
+        <text x="156" y="244" fill="white" font-family="monospace" font-size="12">-R</text>
+
+      </svg>
+
+    </div>
+  </div>
+
+  <div class="table">
+    <table>
+      <thead>
+      <tr>
+        <th>X</th>
+        <th>Y</th>
+        <th>R</th>
+        <th>isShoot</th>
+      </tr>
+      </thead>
+
+      <tbody>
+        @for (point of points; track $index) {
+          <tr>
+            <td>{{ point.x }}</td>
+            <td>{{ point.y }}</td>
+            <td>{{ point.r }}</td>
+            <td>{{ point.isShoot }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

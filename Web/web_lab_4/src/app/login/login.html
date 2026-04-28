@@ -1,0 +1,33 @@
+<div class="login-container">
+  <div class="header">
+    <h2>Nekrutenko Maxim Vladimirovich</h2>
+    <h3>Group: P3206, Variant: 1361613</h3>
+  </div>
+
+  <div class="form">
+    <div id="login">
+      <label>Login:</label>
+      <input
+        type="text"
+        [(ngModel)]="login"
+        placeholder="Enter your login">
+    </div>
+
+    <div id="password">
+      <label>Password</label>
+      <input
+        type="password"
+        [(ngModel)]="password"
+        placeholder="Enter your password">
+    </div>
+
+    <div class="buttons">
+      <button (click)="onLogin()" class="btn-login">Войти</button>
+      <button (click)="onRegister()" class="btn-password">Зарегестрироваться</button>
+    </div>
+
+    @if (errorMessage) {
+      <div class="error">{{ errorMessage }}</div>
+    }
+  </div>
+</div>

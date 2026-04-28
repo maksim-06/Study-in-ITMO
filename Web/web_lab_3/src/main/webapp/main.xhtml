@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Проверка точек</title>
+    <style>
+        .results-section{
+            white-space: normal;
+            float: left;
+            width: 40%;
+            margin-right: 50px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</h:head>
+
+<h:body>
+    <main class="container">
+        <div class="form-section">
+            <h:form id="pointForm">
+                <div class="form-group">
+                    <label for="x">Координата X:</label>
+                    <h:selectOneMenu id="x" value="#{pointBean.x}">
+                        <f:selectItem itemValue="5" itemLabel="5"/>
+                        <f:selectItem itemValue="4" itemLabel="4"/>
+                        <f:selectItem itemValue="3" itemLabel="3"/>
+                        <f:selectItem itemValue="2" itemLabel="2"/>
+                        <f:selectItem itemValue="1" itemLabel="1"/>
+                        <f:selectItem itemValue="0" itemLabel="0"/>
+                        <f:selectItem itemValue="-1" itemLabel="-1"/>
+                        <f:selectItem itemValue="-2" itemLabel="-2"/>
+                        <f:selectItem itemValue="-3" itemLabel="-3"/>
+                        <f:selectItem itemValue="-4" itemLabel="-4"/>
+                        <f:selectItem itemValue="-5" itemLabel="-5"/>
+                    </h:selectOneMenu>
+                </div>
+
+                <div class="form-group">
+                    <label for="y">Координата Y:</label>
+                    <h:inputText id="y"  value="#{pointBean.y}"
+                                 placeholder="Число от -5 до 5"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="r">Радиус R:</label>
+                    <h:selectOneMenu id="r" value="#{pointBean.r}">
+                        <f:selectItem itemValue="1" itemLabel="1"/>
+                        <f:selectItem itemValue="2" itemLabel="2"/>
+                        <f:selectItem itemValue="3" itemLabel="3"/>
+                        <f:selectItem itemValue="4" itemLabel="4"/>
+                        <f:selectItem itemValue="5" itemLabel="5"/>
+                    </h:selectOneMenu>
+                </div>
+
+                <h:commandButton id="submitBtn" value="Проверить точку" action="#{pointBean.checkPoint}">
+                    <f:ajax execute="@form"
+                            render="messages resultsTable"
+                            onevent="handleAjaxResponse"/>
+                </h:commandButton>
+            </h:form>
+        </div>
+
+
+        <h:messages id="messages" showDetail="true" globalOnly="true"/>
+
+        <div class="result">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 id="graph" width="300" height="300" style="background: black; border: 1px solid #ccc; margin: 10px 0;">
+
+                <rect x="50" y="150" width="100" height="50" style="fill: rgba(51,153,255,0.2)" />
+                <polygon points="150,150 250,150 150,200" fill="rgba(51,153,255,0.2)" />
+                <path d="M150,150 L150,50 A100,100 0 0,1 250,150 Z" fill="rgba(51,153,255,0.2)" />
+
+                <line x1="150" y1="0" x2="150" y2="300" stroke="white" stroke-width="1" />
+                <line x1="0" y1="150" x2="300" y2="150" stroke="white" stroke-width="1" />
+
+                <text x="156" y="144" fill="white" font-family="monospace" font-size="12">0</text>
+                <text x="194" y="144" fill="white" font-family="monospace" font-size="12">R/2</text>
+                <text x="244" y="144" fill="white" font-family="monospace" font-size="12">R</text>
+                <text x="106" y="144" fill="white" font-family="monospace" font-size="12">-R/2</text>
+                <text x="42" y="144" fill="white" font-family="monospace" font-size="12">-R</text>
+                <text x="156" y="106" fill="white" font-family="monospace" font-size="12">R/2</text>
+                <text x="156" y="56" fill="white" font-family="monospace" font-size="12">R</text>
+                <text x="156" y="194" fill="white" font-family="monospace" font-size="12">-R/2</text>
+                <text x="156" y="244" fill="white" font-family="monospace" font-size="12">-R</text>
+            </svg>
+        </div>
+
+
+        <div class="results-section">
+            <h:dataTable id="resultsTable" value="#{resultBean.results}" var="result"
+                         styleClass="table" headerClass="table-header">
+
+                <h:column>
+                    <f:facet name="header">X</f:facet>
+                    #{result.x}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Y</f:facet>
+                    #{result.y}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">R</f:facet>
+                    #{result.r}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Результат</f:facet>
+                    #{result.isShoot}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Время</f:facet>
+                    <h:outputText value="#{result.timestamp}">
+                        <f:convertDateTime pattern="dd.MM.yyyy HH:mm:ss"/>
+                    </h:outputText>
+                </h:column>
+            </h:dataTable>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <h:link outcome="index" value="Вернуться на главную страницу"/>
+        </div>
+    </main>
+    <script>
+        const state = {
+            x: null,
+            y: null,
+            r: null,
+        };
+
+        let points = [];
+
+
+        document.addEventListener("DOMContentLoaded", function (){
+            setupGraphClickListener();
+            loadExistingPoints();
+            setupRChangeListener();
+        })
+
+        function Validate() {
+            const yNum = document.querySelector('select[id="pointForm:y"]');
+            if (isNaN(yNum) || parseFloat(yNum) &lt; -5 || parseFloat(yNum) > 5) {
+                alert('Y must be a number between -5 and 5');
+                return false;
+            }
+
+            return true;
+        }
+
+        function setupGraphClickListener(){
+            const graph = document.getElementById('graph');
+
+            if (!graph) {
+                console.error("ERROR: No element with id='graph' was found");
+                return;
+            }
+
+            const rSelect = document.querySelector('select[id="pointForm:r"]');
+            if (!rSelect) {
+                console.error("The radius R is not set");
+                return;
+            }
+
+            graph.addEventListener("click", function(event) {
+                if (!Validate()) {
+                    alert("X parameter must be between -5 and 5");
+                    return;
+                }
+
+                const rect = graph.getBoundingClientRect();
+
+                const clickX = event.clientX - rect.left;
+                const clickY = event.clientY - rect.top;
+
+                const MathX = ((clickX - 150) / 100) * parseInt(rSelect.value);
+                const MathY = ((150 - clickY) / 100) * parseInt(rSelect.value);
+
+                const correctedX = correctXValue(MathX);
+
+                if (MathY &lt; -5 || MathY>5){
+                    console.error("Y must be a number between -5 and 5");
+                }
+
+                setFormValues(correctedX,MathY);
+
+                submitForm();
+            });
+
+        }
+
+        function correctXValue(mathX){
+            const validX = [5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5];
+
+            let nearest = validX[0];
+            let minDist = Math.abs(mathX - nearest);
+
+            for (let i = 1; i &lt; validX.length; i++) {
+                const dist = Math.abs(mathX - validX[i]);
+                if (dist &lt; minDist) {
+                    minDist = dist;
+                    nearest = validX[i];
+                }
+            }
+
+            return nearest;
+        }
+
+        function setFormValues(x,y){
+            const xSelect = document.querySelector('select[id="pointForm:x"]');
+            if (xSelect) {
+                xSelect.value = x.toString();
+            } else{
+                console.error("Select not found for X");
+            }
+
+            const ySelect = document.querySelector('input[id="pointForm:y"]');
+
+            if (ySelect) {
+                ySelect.value = y.toString();
+            } else{
+                console.error("Input not found for Y");
+            }
+        }
+
+        function submitForm(){
+            const submitButton = document.getElementById('pointForm:submitBtn');
+            if (submitButton){
+                submitButton.click();
+            }
+        }
+
+
+        function loadExistingPoints() {
+            const resultTable = document.getElementById('resultsTable');
+
+            if (!resultTable) {
+                console.error("No results table found")
+                return;
+            }
+
+            points = [];
+
+            const rows = resultTable.querySelectorAll('tr')
+
+
+            if (rows.length > 0){
+                for (let i = 1; i &lt; rows.length; i++) {
+                    const row = rows[i];
+                    const cells = row.getElementsByTagName('td');
+                    console.log(cells.length);
+                    if (cells.length === 5){
+                        try{
+                            const x = parseInt(cells[0].textContent.trim());
+                            const y = parseFloat(cells[1].textContent.trim());
+                            const r = parseInt(cells[2].textContent.trim());
+                            const isShoot = cells[3].textContent.trim();
+
+                            points.push({
+                                x: x,
+                                y: y,
+                                r: r,
+                                isShoot: isShoot
+                            });
+
+
+                        } catch (error) {
+                            console.error("Line reading error: ", error)
+                        }
+                    }
+                }
+            }
+
+            drawGraph();
+        }
+
+        function drawGraph() {
+            const graph = document.getElementById("graph");
+            const pointsToRemove = graph.querySelectorAll('.graph-point');
+            pointsToRemove.forEach(point => {
+                point.remove();
+            });
+
+            points.forEach(point => {
+                addPointToGraph(point.x, point.y, point.r, point.isShoot);
+            });
+
+            updateLabels();
+        }
+
+        function updateLabels() {
+            const rSelect = document.querySelector('select[id="pointForm:r"]');
+            const currentR = rSelect ? parseFloat(rSelect.value) : 1;
+            const halfR = (currentR / 2).toFixed(1);
+
+
+            const numHalfR = parseFloat(halfR);
+            const numCurrentR = parseFloat(currentR);
+
+            document.querySelector('text[x="194"]').textContent = halfR;
+            document.querySelector('text[x="244"]').textContent = currentR;
+            document.querySelector('text[x="106"]').textContent = -numHalfR;
+            document.querySelector('text[x="42"]').textContent = -numCurrentR;
+
+            document.querySelector('text[y="106"]').textContent = halfR;
+            document.querySelector('text[y="56"]').textContent = currentR;
+            document.querySelector('text[y="194"]').textContent = -numHalfR;
+            document.querySelector('text[y="244"]').textContent = -numCurrentR;
+        }
+
+        function addPointToGraph(x, y, r, isShoot) {
+            const rSelect = document.querySelector('select[id="pointForm:r"]');
+            const currentR = rSelect ? parseInt(rSelect.value) : 1;
+
+            if (currentR !== r) {
+                return;
+            }
+
+            const svgX = 150 + (x/currentR) * 100;
+            const svgY = 150 - (y/currentR) * 100;
+
+            const point = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            point.setAttribute("cx", svgX);
+            point.setAttribute("cy", svgY);
+            point.setAttribute("r", 3);
+
+            if (isShoot === 'Попал') {
+                point.setAttribute('fill', '#4CAF50');
+                point.setAttribute('stroke', '#2E7D32');
+            } else {
+                point.setAttribute('fill', '#F44336');
+                point.setAttribute('stroke', '#C62828');
+            }
+
+            point.setAttribute('stroke-width', 1);
+            point.setAttribute('class', 'graph-point');
+
+            const graph = document.getElementById("graph");
+            graph.appendChild(point);
+        }
+
+        function setupRChangeListener() {
+            const rSelect = document.querySelector('select[id="pointForm:r"]');
+            if (rSelect) {
+                rSelect.addEventListener('change', function () {
+                    updateLabels();
+                    drawGraph();
+                });
+            }
+        }
+    </script>
+</h:body>
+</html>

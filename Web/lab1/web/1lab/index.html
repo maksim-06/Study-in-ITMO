@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>First Lab</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/reset.css">
+        <script defer src="index.js"></script>
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <div id="info">
+                Некрутенко Максим
+                <br>
+                P3106
+                <br>
+                <span class="var">v. <span class="number">466853</span> </span>
+            </div>
+        </nav>
+
+        <main class="input-section">
+            <div class="input">
+                <form method="get" id="data-form">
+                    <fieldset id="xs">
+                        <div class="radio-group">
+                            <input type="radio" id="x-2" name="x" value="-2" required>
+                            <label for="x-2">-2</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="x-1.5" name="x" value="-1.5">
+                            <label for="x-1.5">-1.5</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="x-1" name="x" value="-1">
+                            <label for="x-1">-1</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="x-0.5" name="x" value="-0.5">
+                            <label for="x-0.5">-0.5</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="x0" name="x" value="0">
+                            <label for="x0">0</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="x0.5" name="x" value="0.5">
+                            <label for="x0.5">0.5</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="x1" name="x" value="1">
+                            <label for="x1">1</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="x1.5" name="x" value="1.5">
+                            <label for="x1.5">1.5</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="x2" name="x" value="2">
+                            <label for="x2">2</label>
+                        </div>
+                    </fieldset>
+                    <label for="y">Enter Y:</label>
+                    <input type="number" id="y" name="y" step="any" required>
+
+                    <label for="r">Select R:</label>
+                    <select name="r" id="r" required>
+                        <option value="1">1.0</option>
+                        <option value="1.5">1.5</option>
+                        <option value="2">2.0</option>
+                        <option value="2.5">2.5</option>
+                        <option value="3">3.0</option>
+                    </select>
+                    <button type="submit">Submit</button>
+                </form>
+
+                <div id="err" hidden></div>
+            </div>
+
+            <div class="result">
+
+                <svg id="graph" width="300" height="300" style="background: black">
+
+                    <rect x="50" y="50" width="100" height="100" style="fill: rgba(51,153,255,0.2)"></rect>
+                    <polygon points="150,150 100,150 150,200" fill="rgba(51,153,255,0.2)" />
+                    <path d="M200,150 A50,50 0 0,1 150,200 L150,150 L200,150 Z" fill="rgba(51,153,255,0.2)" />
+
+                    <line x1="150" y1="0" x2="150" y2="300" stroke="white" stroke-width="1" />
+                    <line x1="0" y1="150" x2="300" y2="150" stroke="white" stroke-width="1" />
+
+                    <text x="156" y="144" fill="white" font-family="monospace" font-size="12">0</text>
+
+                    <text x="194" y="144" fill="white" font-family="monospace" font-size="12">R/2</text>
+                    <text x="244" y="144" fill="white" font-family="monospace" font-size="12">R</text>
+
+                    <text x="106" y="144" fill="white" font-family="monospace" font-size="12">-R/2</text>
+                    <text x="42" y="144" fill="white" font-family="monospace" font-size="12">-R</text>
+
+                    <text x="156" y="106" fill="white" font-family="monospace" font-size="12">R/2</text>
+                    <text x="156" y="56" fill="white" font-family="monospace" font-size="12">R</text>
+
+                    <text x="156" y="194" fill="white" font-family="monospace" font-size="12">-R/2</text>
+                    <text x="156" y="244" fill="white" font-family="monospace" font-size="12">-R</text>
+
+                </svg>
+
+
+
+                <div style="max-height: 200px; overflow-y: auto">
+                    <table id="result-table" style="width: 100%; table-layout: fixed">
+                        <tr>
+                            <th style="width: 10%">isShoot</th>
+                            <th style="width: 5%">x</th>
+                            <th style="width: 55%">y</th>
+                            <th style="width: 5%">r</th>
+                            <th style="width: 15%">time</th>
+                            <th style="width: 10%">execution time</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
