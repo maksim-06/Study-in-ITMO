@@ -1,5 +1,7 @@
 Study in ITMO: Portfolio of Software Engineering Student
+
 Добро пожаловать в мой учебный репозиторий! Здесь собраны ключевые проекты и лабораторные работы, выполненные за время обучения в университете ИТМО.
+
 🛠 Технологический стек:
 Backend: Java (Core, EE/Jakarta), Python.
 Frontend: Angular, TypeScript.
