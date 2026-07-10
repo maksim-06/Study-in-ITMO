@@ -104,7 +104,7 @@
 
 🔗 Ссылка на отчет (fibonacci на risc-iv-32): https://wrench.edu.swampbuds.me/report/2ff6171b-284b-4954-a130-27960cd12ab4
 
-🔗 Ссылка на схему (m68k): https://github.com/maksim-06/Study-in-ITMO/blob/main/m68k/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-06-24%20152425.png
+🔗 Ссылка на схему (m68k): https://github.com/maksim-06/Study-in-ITMO/blob/main/Сomputer%20architecture/lab3/schematic_m68k/Схема_m68k.png
 
 🔥 Порядок защиты: Проводится поштучная защита каждого независимого алгоритма и принципиальной схемы перед преподавателем.
 
