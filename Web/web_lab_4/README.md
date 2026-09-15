@@ -1,18 +1,18 @@
 Лабораторная работа №4: Single Page Application (Angular + EJB)
 
-Стек: Angular (v2+), Java EE (EJB), REST API, JPA, СУБД HSQLDB.
+Стек: Angular (v2+), Jakarta EE (EJB), REST API, JPA, СУБД PostgreSQL.
 
 Что реализовано:
 
-— Архитектура: Полноценное разделение на Front-end (Angular) и Back-end (Java EE). Взаимодействие реализовано через REST API.
+— Архитектура: Полноценное разделение на Front-end (Angular) и Back-end (Jakarta EE). Взаимодействие реализовано через REST API.
 
-— Back-end (Java EE):
+— Back-end (Jakarta EE):
 
 \* Бизнес-логика вынесена в EJB (Enterprise JavaBeans).
 
 \* Реализована система аутентификации. Информация о пользователях хранится в БД, пароли защищены хэшированием.
 
-\* Работа с базой данных HSQLDB через JPA.
+\* Работа с базой данных PostgreSQL через JPA.
 
 — Front-end (Angular):
 
