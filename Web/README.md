@@ -6,9 +6,9 @@
 
 Frontend: Angular (2+), TypeScript, JSF (PrimeFaces), JavaScript (AJAX).
 
-Backend: Java EE (EJB, Servlets), REST API, FastCGI.
+Backend: Jakarta EE (EJB, Servlets), REST API, FastCGI.
 
-Data: JPA (ORM), БД (HSQLDB, PostgreSQL, Apache Derby).
+Data: JPA (ORM), БД (PostgreSQL).
 
 Servers: WildFly.
 
